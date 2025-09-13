@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Parkuy — Parkir Online</title>
+    <meta
+      name="description"
+      content="My Parkuy: solusi parkir online untuk menemukan, memesan, dan membayar tempat parkir dengan mudah."
+    />
+  </head>
+  <body>
+    <!-- Header / Hero -->
+    <header>
+      <div>
+        <h1>My Parkuy</h1>
+        <p>
+          Temukan, pesan, dan bayar tempat parkir terdekat dalam hitungan menit.
+        </p>
+        <hr />
+        <nav aria-label="Main Navigation">
+          <ul>
+            <li><a href="#features">Fitur</a></li>
+            <li><a href="#how">Cara Kerja</a></li>
+            <li><a href="#pricing">Harga</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Kontak</a></li>
+          </ul>
+        </nav>
+        <form action="#booking" method="get" aria-label="Form pencarian parkir">
+          <fieldset>
+            <legend>Cari tempat parkir</legend>
+            <label for="location">Lokasi (kota atau alamat)</label>
+            <input
+              type="search"
+              id="location"
+              name="location"
+              placeholder="Contoh: Jalan Sudirman, Jakarta"
+              required
+            />
+            <label for="datetime">Tanggal & waktu</label>
+            <input type="datetime-local" id="datetime" name="datetime" />
+            <button type="submit">Cari</button>
+          </fieldset>
+        </form>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <!-- Features -->
+      <section id="features" aria-labelledby="features-heading">
+        <h2 id="features-heading">Fitur Unggulan</h2>
+        <ul>
+          <li>
+            <article>
+              <h3>Temukan Tempat Parkir Terdekat</h3>
+              <p>
+                Daftar lokasi parkir dari berbagai mitra publik dan privat
+                dengan real-time availability.
+              </p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h3>Pesan & Bayar Online</h3>
+              <p>
+                Pesan slot terlebih dahulu dan bayar melalui metode yang
+                dipilih: dompet digital, kartu, atau transfer.
+              </p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h3>Rute dan Navigasi</h3>
+              <p>
+                Dapatkan petunjuk arah ke slot parkir yang dipesan langsung dari
+                aplikasi peta yang Anda gunakan.
+              </p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h3>Riwayat & Struk Digital</h3>
+              <p>
+                Riwayat transaksi, struk digital, dan pengingat masa berlaku
+                parkir.
+              </p>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <!-- How it works -->
+      <section id="how" aria-labelledby="how-heading">
+        <h2 id="how-heading">Cara Kerja</h2>
+        <ol>
+          <li>Masukkan lokasi dan waktu parkir yang diinginkan.</li>
+          <li>
+            Pilih slot parkir yang tersedia dan lihat detail (harga, jam
+            operasi).
+          </li>
+          <li>Pesan dan lakukan pembayaran.</li>
+          <li>Dapatkan bukti transaksi berupa kode dan qr</li>
+          <li>Terima konfirmasi dan navigasi ke lokasi parkir.</li>
+        </ol>
+      </section>
+
+      <!-- Booking example (placeholder list) -->
+      <section id="booking" aria-labelledby="booking-heading">
+        <h2 id="booking-heading">Contoh Hasil Pencarian</h2>
+        <ul>
+          <li>
+            <article>
+              <h3>Mall Central Parking</h3>
+              <p>
+                Alamat: Jl. Contoh No.1 — Kapasitas tersisa: 12 slot — Harga: Rp
+                5.000/jam
+              </p>
+              <form
+                action="#"
+                method="post"
+                aria-label="Pesan Mall Central Parking"
+              >
+                <input
+                  type="hidden"
+                  name="location_id"
+                  value="mall-central-1"
+                />
+                <label for="vehicle-1">Nomor kendaraan</label>
+                <input
+                  id="vehicle-1"
+                  name="plate"
+                  placeholder="KT 1234 XYZ"
+                  required
+                />
+                <button type="submit">Pesan Sekarang</button>
+              </form>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h3>Gedung Office Park</h3>
+              <p>
+                Alamat: Jl. Contoh II — Kapasitas tersisa: 4 slot — Harga: Rp
+                8.000/jam
+              </p>
+              <form
+                action="#"
+                method="post"
+                aria-label="Pesan Gedung Office Park"
+              >
+                <input type="hidden" name="location_id" value="office-park-2" />
+                <label for="vehicle-2">Nomor kendaraan</label>
+                <input
+                  id="vehicle-2"
+                  name="plate"
+                  placeholder="KT 5678 ABC"
+                  required
+                />
+                <button type="submit">Pesan Sekarang</button>
+              </form>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing" aria-labelledby="pricing-heading">
+        <h2 id="pricing-heading">Pilihan Harga</h2>
+        <p>
+          Model harga fleksibel: per jam, per hari, atau langganan bulanan untuk
+          pengguna rutin.
+        </p>
+        <table>
+          <caption>
+            Contoh tarif
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Tipe</th>
+              <th scope="col">Tarif</th>
+              <th scope="col">Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reguler (per jam)</td>
+              <td>Rp 5.000</td>
+              <td>Tarif standar per jam</td>
+            </tr>
+            <tr>
+              <td>Parkir Harian</td>
+              <td>Rp 30.000</td>
+              <td>Tarif maksimal 24 jam</td>
+            </tr>
+            <tr>
+              <td>Langganan Bulanan</td>
+              <td>Rp 300.000</td>
+              <td>Akses ke slot tertentu tanpa perlu pesan setiap hari</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Testimonials & Social proof -->
+      <aside aria-labelledby="testimony-heading">
+        <h2 id="testimony-heading">Testimoni Pengguna</h2>
+        <blockquote>
+          <p>"Membantu banget, nggak perlu putar-putar cari parkir lagi!"</p>
+          <footer>— Mas Faiz, pengguna My Parkuy</footer>
+        </blockquote>
+      </aside>
+
+      <!-- FAQ -->
+      <section id="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Pertanyaan yang Sering Diajukan</h2>
+        <dl>
+          <dt>Bagaimana cara membatalkan pemesanan?</dt>
+          <dd>
+            Masuk ke riwayat pemesanan, pilih pemesanan yang ingin dibatalkan,
+            lalu tekan tombol batal. Ketentuan pembatalan tergantung kebijakan
+            lokasi.
+          </dd>
+          <dt>Apakah ada biaya layanan?</dt>
+          <dd>
+            Tergantung lokasi, beberapa mitra mengenakan biaya layanan kecil per
+            transaksi.
+          </dd>
+          <dt>Metode pembayaran apa yang diterima?</dt>
+          <dd>Dompet digital, kartu kredit/debit, dan transfer bank.</dd>
+        </dl>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Hubungi Kami</h2>
+        <address>
+          <p>Alamat kantor: Jl. Anggur. 123, Samarinda</p>
+          <p>
+            Surel: <a href="mailto:myparkuy@gmail.com">myparkuy@gmail.com</a>
+          </p>
+          <p>Telepon: <a href="tel:+62211234567">(021) 123-4567</a></p>
+        </address>
+        <form action="#" method="post" aria-label="Form kontak">
+          <label for="name">Nama</label>
+          <input id="name" name="name" required /><br />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required /> <br />
+          <label for="message">Pesan</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <button type="submit">Kirim Pesan</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <hr />
+      <p>&copy; <time datetime="2025">2025</time> eparkir.id</p>
+      <nav aria-label="Footer Navigation">
+        <ul>
+          <li><a href="#privacy">Kebijakan Privasi</a></li>
+          <li><a href="#terms">Syarat & Ketentuan</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+    <!-- Notes for developer (non-executing in browser):
+       - Dokumen ini sengaja tanpa CSS; tambahkan file CSS terpisah nanti untuk styling.
+       - Untuk aksesibilitas: label, fieldset, legend, aria-label sudah disediakan.
+       - Untuk integrasi nyata: ganti action form dengan endpoint API, dan tambahkan validasi di server.
+  --></body>
+</html>
