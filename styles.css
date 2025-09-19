@@ -1,0 +1,139 @@
+/*
+  My Parkuy — Global Styles (CSS3)
+  - Palette: blue (primary), gray neutrals, white backgrounds, subtle pastel tints
+  - Utilities: spacing, cards, buttons overrides, grid helpers
+  - Responsive: mobile-first with media queries for md (768px) and lg (992px)
+*/
+
+:root {
+  /* Colors */
+  --primary-600: #2f6fed;
+  --primary-700: #2157c9;
+  --primary-100: #e8f0ff;
+  --accent-100: #eaf7ff; /* soft pastel blue */
+  --neutral-900: #0f172a; /* near-black */
+  --neutral-700: #334155; /* slate */
+  --neutral-600: #475569;
+  --neutral-500: #64748b;
+  --neutral-300: #cbd5e1;
+  --neutral-200: #e2e8f0;
+  --neutral-100: #f1f5f9;
+  --white: #ffffff;
+
+  /* Shadows & Radii */
+  --radius-sm: .5rem;
+  --radius-md: .75rem;
+  --radius-lg: 1rem;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.1);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, .08);
+
+  /* Sizing */
+  --container-max: 1140px;
+}
+
+/* Base Typography */
+html { scroll-behavior: smooth; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--neutral-900);
+  background-color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 { color: var(--neutral-900); }
+.lead { color: var(--neutral-600); }
+.text-secondary { color: var(--neutral-600) !important; }
+
+/* Links */
+a { color: var(--primary-600); text-decoration: none; }
+a:hover { color: var(--primary-700); text-decoration: underline; }
+
+/* Global sections */
+.section-padding { padding: 3rem 0; }
+.section-title { font-weight: 700; margin-bottom: 1rem; }
+.bg-surface { background: linear-gradient(180deg, var(--neutral-100), #fff); }
+
+/* Hero */
+.hero {
+  background: radial-gradient(1000px 400px at 10% -10%, var(--accent-100), transparent),
+              linear-gradient(180deg, #fff, var(--neutral-100));
+}
+.hero .hero-logo { max-width: 280px; filter: drop-shadow(0 8px 16px rgba(47, 111, 237, 0.15)); }
+
+/* Cards */
+.card { border-radius: var(--radius-md) !important; }
+.card-featured {
+  border: 1px solid var(--neutral-200);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.card-featured:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Buttons: keep Bootstrap API */
+.btn-primary {
+  --bs-btn-bg: var(--primary-600);
+  --bs-btn-border-color: var(--primary-600);
+  --bs-btn-hover-bg: var(--primary-700);
+  --bs-btn-hover-border-color: var(--primary-700);
+  --bs-btn-focus-shadow-rgb: 47, 111, 237;
+}
+
+/* Inputs */
+.form-control, .input-group-text { border-radius: var(--radius-sm); }
+.input-group-text { background-color: var(--neutral-100); border-color: var(--neutral-200); }
+.form-control:focus { box-shadow: 0 0 0 .25rem rgba(47, 111, 237, .15); border-color: var(--primary-600); }
+
+/* Features grid using CSS Grid for custom control */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 576px) {
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+  .features-grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+}
+
+/* Navbar tweaks */
+.navbar .nav-link { color: var(--neutral-700); }
+.navbar .nav-link:hover, .navbar .nav-link:focus { color: var(--primary-600); }
+.navbar-brand { color: var(--neutral-900); }
+
+/* Tables */
+.table { --bs-table-striped-bg: var(--neutral-100); }
+.table > :not(caption) > * > * { background-color: transparent; }
+
+/* Footer */
+footer .nav-link { color: var(--neutral-600); }
+footer .nav-link:hover { color: var(--primary-600); }
+
+/* Utilities */
+.shadow-sm { box-shadow: var(--shadow-sm) !important; }
+.shadow-md { box-shadow: var(--shadow-md) !important; }
+.rounded-3 { border-radius: var(--radius-lg) !important; }
+
+/* Responsive adjustments */
+@media (max-width: 575.98px) {
+  .section-title { font-size: 1.5rem; }
+  .hero .display-5 { font-size: 2rem; }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .section-padding { padding: 3.5rem 0; }
+}
+
+@media (min-width: 992px) {
+  .section-padding { padding: 4rem 0; }
+}
+
+/* Accessibility helpers */
+:focus-visible { outline: 3px solid rgba(47, 111, 237, .45); outline-offset: 2px; }
+
+/* Spacing fixes for nested lists/cards */
+.card .form-label { font-weight: 600; }
+blockquote.blockquote { border-color: var(--primary-600) !important; }

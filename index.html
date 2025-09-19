@@ -3,273 +3,342 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta author="Zeydan Fazle Mawla" />
+    <meta name="author" content="Zeydan Fazle Mawla" />
     <title>My Parkuy — Parkir Online</title>
     <meta
       name="description"
       content="My Parkuy: solusi parkir online untuk menemukan, memesan, dan membayar tempat parkir dengan mudah."
     />
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Header / Hero -->
-    <header>
-      <div>
-        <h1>My Parkuy</h1>
-        <p>
-          Temukan, pesan, dan bayar tempat parkir terdekat dalam hitungan menit.
-        </p>
-        <img src="assets/img/logo.png" alt="Logo My Parkuy" />
-        <hr />
-        <nav aria-label="Main Navigation">
-          <ul>
-            <li><a href="#features">Fitur</a></li>
-            <li><a href="#how">Cara Kerja</a></li>
-            <li><a href="#pricing">Harga</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Kontak</a></li>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <img src="assets/img/logo.png" alt="Logo My Parkuy" width="34" height="34" class="rounded" />
+          <span class="fw-semibold">My Parkuy</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#features">Fitur</a></li>
+            <li class="nav-item"><a class="nav-link" href="#how">Cara Kerja</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pricing">Harga</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
           </ul>
-        </nav>
-        <form action="#booking" method="get" aria-label="Form pencarian parkir">
-          <fieldset>
-            <legend>Cari tempat parkir</legend>
-            <label for="location">Lokasi (kota atau alamat)</label>
-            <input
-              type="search"
-              id="location"
-              name="location"
-              placeholder="Contoh: Jalan Sudirman, Jakarta"
-              required
-            />
-            <label for="datetime">Tanggal & waktu</label>
-            <input type="datetime-local" id="datetime" name="datetime" />
-            <button type="submit">Cari</button>
-          </fieldset>
-        </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header / Hero -->
+    <header class="hero py-5 py-lg-6">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <h1 class="display-5 fw-bold mb-3">My Parkuy</h1>
+            <p class="lead text-secondary mb-4">
+              Temukan, pesan, dan bayar tempat parkir terdekat dalam hitungan menit.
+            </p>
+            <form action="#booking" method="get" aria-label="Form pencarian parkir" class="card shadow-sm border-0">
+              <fieldset class="card-body">
+                <legend class="visually-hidden">Cari tempat parkir</legend>
+                <div class="row g-3 align-items-end">
+                  <div class="col-12 col-md-6">
+                    <label for="location" class="form-label">Lokasi (kota atau alamat)</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+                      <input
+                        type="search"
+                        id="location"
+                        name="location"
+                        class="form-control"
+                        placeholder="Contoh: Jalan Sudirman, Jakarta"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <label for="datetime" class="form-label">Tanggal & waktu</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                      <input type="datetime-local" id="datetime" name="datetime" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-2 d-grid">
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-search me-2"></i>Cari</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="col-lg-5 text-center text-lg-end">
+            <img src="assets/img/logo.png" alt="Logo My Parkuy" class="hero-logo img-fluid" />
+          </div>
+        </div>
       </div>
     </header>
 
     <!-- Main content -->
     <main>
       <!-- Features -->
-      <section id="features" aria-labelledby="features-heading">
-        <h2 id="features-heading">Fitur Unggulan</h2>
-        <ul>
-          <li>
-            <article>
-              <h3>Temukan Tempat Parkir Terdekat</h3>
-              <p>
-                Daftar lokasi parkir dari berbagai mitra publik dan privat
-                dengan real-time availability.
-              </p>
-            </article>
-          </li>
-          <li>
-            <article>
-              <h3>Pesan & Bayar Online</h3>
-              <p>
-                Pesan slot terlebih dahulu dan bayar melalui metode yang
-                dipilih: dompet digital, kartu, atau transfer.
-              </p>
-            </article>
-          </li>
-          <li>
-            <article>
-              <h3>Rute dan Navigasi</h3>
-              <p>
-                Dapatkan petunjuk arah ke slot parkir yang dipesan langsung dari
-                aplikasi peta yang Anda gunakan.
-              </p>
-            </article>
-          </li>
-          <li>
-            <article>
-              <h3>Riwayat & Struk Digital</h3>
-              <p>
-                Riwayat transaksi, struk digital, dan pengingat masa berlaku
-                parkir.
-              </p>
-            </article>
-          </li>
-        </ul>
+      <section id="features" aria-labelledby="features-heading" class="section-padding bg-surface">
+        <div class="container">
+          <div class="d-flex align-items-center justify-content-between mb-3 mb-md-4">
+            <h2 id="features-heading" class="section-title mb-0">Fitur Unggulan</h2>
+          </div>
+          <ul class="features-grid list-unstyled">
+            <li>
+              <article class="card card-featured h-100">
+                <div class="card-body">
+                  <h3 class="h5"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Temukan Tempat Parkir Terdekat</h3>
+                  <p class="mb-0">
+                    Daftar lokasi parkir dari berbagai mitra publik dan privat dengan real-time availability.
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="card card-featured h-100">
+                <div class="card-body">
+                  <h3 class="h5"><i class="bi bi-credit-card-2-front text-primary me-2"></i>Pesan & Bayar Online</h3>
+                  <p class="mb-0">
+                    Pesan slot terlebih dahulu dan bayar melalui metode yang dipilih: dompet digital, kartu, atau transfer.
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="card card-featured h-100">
+                <div class="card-body">
+                  <h3 class="h5"><i class="bi bi-sign-turn-right-fill text-primary me-2"></i>Rute dan Navigasi</h3>
+                  <p class="mb-0">
+                    Dapatkan petunjuk arah ke slot parkir yang dipesan langsung dari aplikasi peta yang Anda gunakan.
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="card card-featured h-100">
+                <div class="card-body">
+                  <h3 class="h5"><i class="bi bi-receipt text-primary me-2"></i>Riwayat & Struk Digital</h3>
+                  <p class="mb-0">
+                    Riwayat transaksi, struk digital, dan pengingat masa berlaku parkir.
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <!-- How it works -->
-      <section id="how" aria-labelledby="how-heading">
-        <h2 id="how-heading">Cara Kerja</h2>
-        <ol>
-          <li>Masukkan lokasi dan waktu parkir yang diinginkan.</li>
-          <li>
-            Pilih slot parkir yang tersedia dan lihat detail (harga, jam
-            operasi).
-          </li>
-          <li>Pesan dan lakukan pembayaran.</li>
-          <li>Dapatkan bukti transaksi berupa kode dan qr</li>
-          <li>Terima konfirmasi dan navigasi ke lokasi parkir.</li>
-        </ol>
+      <section id="how" aria-labelledby="how-heading" class="section-padding">
+        <div class="container">
+          <h2 id="how-heading" class="section-title">Cara Kerja</h2>
+          <ol class="ps-3 lead">
+            <li>Masukkan lokasi dan waktu parkir yang diinginkan.</li>
+            <li>Pilih slot parkir yang tersedia dan lihat detail (harga, jam operasi).</li>
+            <li>Pesan dan lakukan pembayaran.</li>
+            <li>Dapatkan bukti transaksi berupa kode dan qr</li>
+            <li>Terima konfirmasi dan navigasi ke lokasi parkir.</li>
+          </ol>
+        </div>
       </section>
 
       <!-- Booking example (placeholder list) -->
-      <section id="booking" aria-labelledby="booking-heading">
-        <h2 id="booking-heading">Contoh Hasil Pencarian</h2>
-        <ul>
-          <li>
-            <article>
-              <h3>Mall Central Parking</h3>
-              <p>
-                Alamat: Jl. Contoh No.1 — Kapasitas tersisa: 12 slot — Harga: Rp
-                5.000/jam
-              </p>
-              <form
-                action="#"
-                method="post"
-                aria-label="Pesan Mall Central Parking"
-              >
-                <input
-                  type="hidden"
-                  name="location_id"
-                  value="mall-central-1"
-                />
-                <label for="vehicle-1">Nomor kendaraan</label>
-                <input
-                  id="vehicle-1"
-                  name="plate"
-                  placeholder="KT 1234 XYZ"
-                  required
-                />
-                <button type="submit">Pesan Sekarang</button>
-              </form>
-            </article>
-          </li>
-          <li>
-            <article>
-              <h3>Gedung Office Park</h3>
-              <p>
-                Alamat: Jl. Contoh II — Kapasitas tersisa: 4 slot — Harga: Rp
-                8.000/jam
-              </p>
-              <form
-                action="#"
-                method="post"
-                aria-label="Pesan Gedung Office Park"
-              >
-                <input type="hidden" name="location_id" value="office-park-2" />
-                <label for="vehicle-2">Nomor kendaraan</label>
-                <input
-                  id="vehicle-2"
-                  name="plate"
-                  placeholder="KT 5678 ABC"
-                  required
-                />
-                <button type="submit">Pesan Sekarang</button>
-              </form>
-            </article>
-          </li>
-        </ul>
+      <section id="booking" aria-labelledby="booking-heading" class="section-padding bg-surface">
+        <div class="container">
+          <h2 id="booking-heading" class="section-title">Contoh Hasil Pencarian</h2>
+          <ul class="row g-4 list-unstyled">
+            <li class="col-12 col-md-6">
+              <article class="card h-100">
+                <div class="card-body">
+                  <h3 class="h5 mb-2">Mall Central Parking</h3>
+                  <p class="text-secondary">
+                    Alamat: Jl. Contoh No.1 — Kapasitas tersisa: 12 slot — Harga: Rp 5.000/jam
+                  </p>
+                  <form action="#" method="post" aria-label="Pesan Mall Central Parking" class="row g-3">
+                    <input type="hidden" name="location_id" value="mall-central-1" />
+                    <div class="col-12 col-sm-8">
+                      <label for="vehicle-1" class="form-label">Nomor kendaraan</label>
+                      <input id="vehicle-1" name="plate" class="form-control" placeholder="KT 1234 XYZ" required />
+                    </div>
+                    <div class="col-12 col-sm-4 d-grid align-self-end">
+                      <button type="submit" class="btn btn-primary"><i class="bi bi-bag-check me-2"></i>Pesan Sekarang</button>
+                    </div>
+                  </form>
+                </div>
+              </article>
+            </li>
+            <li class="col-12 col-md-6">
+              <article class="card h-100">
+                <div class="card-body">
+                  <h3 class="h5 mb-2">Gedung Office Park</h3>
+                  <p class="text-secondary">
+                    Alamat: Jl. Contoh II — Kapasitas tersisa: 4 slot — Harga: Rp 8.000/jam
+                  </p>
+                  <form action="#" method="post" aria-label="Pesan Gedung Office Park" class="row g-3">
+                    <input type="hidden" name="location_id" value="office-park-2" />
+                    <div class="col-12 col-sm-8">
+                      <label for="vehicle-2" class="form-label">Nomor kendaraan</label>
+                      <input id="vehicle-2" name="plate" class="form-control" placeholder="KT 5678 ABC" required />
+                    </div>
+                    <div class="col-12 col-sm-4 d-grid align-self-end">
+                      <button type="submit" class="btn btn-primary"><i class="bi bi-bag-check me-2"></i>Pesan Sekarang</button>
+                    </div>
+                  </form>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <!-- Pricing -->
-      <section id="pricing" aria-labelledby="pricing-heading">
-        <h2 id="pricing-heading">Pilihan Harga</h2>
-        <p>
-          Model harga fleksibel: per jam, per hari, atau langganan bulanan untuk
-          pengguna rutin.
-        </p>
-        <table>
-          <caption>
-            Contoh tarif
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col">Tipe</th>
-              <th scope="col">Tarif</th>
-              <th scope="col">Keterangan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Reguler (per jam)</td>
-              <td>Rp 5.000</td>
-              <td>Tarif standar per jam</td>
-            </tr>
-            <tr>
-              <td>Parkir Harian</td>
-              <td>Rp 30.000</td>
-              <td>Tarif maksimal 24 jam</td>
-            </tr>
-            <tr>
-              <td>Langganan Bulanan</td>
-              <td>Rp 300.000</td>
-              <td>Akses ke slot tertentu tanpa perlu pesan setiap hari</td>
-            </tr>
-          </tbody>
-        </table>
+      <section id="pricing" aria-labelledby="pricing-heading" class="section-padding">
+        <div class="container">
+          <h2 id="pricing-heading" class="section-title">Pilihan Harga</h2>
+          <p class="text-secondary">
+            Model harga fleksibel: per jam, per hari, atau langganan bulanan untuk pengguna rutin.
+          </p>
+          <div class="table-responsive">
+            <table class="table align-middle table-striped">
+              <caption class="text-secondary">Contoh tarif</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Tipe</th>
+                  <th scope="col">Tarif</th>
+                  <th scope="col">Keterangan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Reguler (per jam)</td>
+                  <td>Rp 5.000</td>
+                  <td>Tarif standar per jam</td>
+                </tr>
+                <tr>
+                  <td>Parkir Harian</td>
+                  <td>Rp 30.000</td>
+                  <td>Tarif maksimal 24 jam</td>
+                </tr>
+                <tr>
+                  <td>Langganan Bulanan</td>
+                  <td>Rp 300.000</td>
+                  <td>Akses ke slot tertentu tanpa perlu pesan setiap hari</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
       <!-- Testimonials & Social proof -->
-      <aside aria-labelledby="testimony-heading">
-        <h2 id="testimony-heading">Testimoni Pengguna</h2>
-        <blockquote>
-          <p>"Membantu banget, nggak perlu putar-putar cari parkir lagi!"</p>
-          <footer>— Mas Faiz, pengguna My Parkuy</footer>
-        </blockquote>
+      <aside aria-labelledby="testimony-heading" class="section-padding bg-surface">
+        <div class="container">
+          <h2 id="testimony-heading" class="section-title">Testimoni Pengguna</h2>
+          <blockquote class="blockquote px-3 py-2 border-start border-4 border-primary bg-white rounded-3 shadow-sm">
+            <p class="mb-1">"Membantu banget, nggak perlu putar-putar cari parkir lagi!"</p>
+            <footer class="blockquote-footer">Mas Faiz, pengguna My Parkuy</footer>
+          </blockquote>
+        </div>
       </aside>
 
       <!-- FAQ -->
-      <section id="faq" aria-labelledby="faq-heading">
-        <h2 id="faq-heading">Pertanyaan yang Sering Diajukan</h2>
-        <dl>
-          <dt>Bagaimana cara membatalkan pemesanan?</dt>
-          <dd>
-            Masuk ke riwayat pemesanan, pilih pemesanan yang ingin dibatalkan,
-            lalu tekan tombol batal. Ketentuan pembatalan tergantung kebijakan
-            lokasi.
-          </dd>
-          <dt>Apakah ada biaya layanan?</dt>
-          <dd>
-            Tergantung lokasi, beberapa mitra mengenakan biaya layanan kecil per
-            transaksi.
-          </dd>
-          <dt>Metode pembayaran apa yang diterima?</dt>
-          <dd>Dompet digital, kartu kredit/debit, dan transfer bank.</dd>
-        </dl>
+      <section id="faq" aria-labelledby="faq-heading" class="section-padding">
+        <div class="container">
+          <h2 id="faq-heading" class="section-title">Pertanyaan yang Sering Diajukan</h2>
+          <dl class="row g-3">
+            <dt class="col-md-4">Bagaimana cara membatalkan pemesanan?</dt>
+            <dd class="col-md-8 text-secondary">
+              Masuk ke riwayat pemesanan, pilih pemesanan yang ingin dibatalkan,
+              lalu tekan tombol batal. Ketentuan pembatalan tergantung kebijakan lokasi.
+            </dd>
+            <dt class="col-md-4">Apakah ada biaya layanan?</dt>
+            <dd class="col-md-8 text-secondary">
+              Tergantung lokasi, beberapa mitra mengenakan biaya layanan kecil per transaksi.
+            </dd>
+            <dt class="col-md-4">Metode pembayaran apa yang diterima?</dt>
+            <dd class="col-md-8 text-secondary">Dompet digital, kartu kredit/debit, dan transfer bank.</dd>
+          </dl>
+        </div>
       </section>
 
       <!-- Contact -->
-      <section id="contact" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Hubungi Kami</h2>
-        <address>
-          <p>Alamat kantor: Jl. Anggur. 123, Samarinda</p>
-          <p>
-            Surel: <a href="mailto:myparkuy@gmail.com">myparkuy@gmail.com</a>
-          </p>
-          <p>Telepon: <a href="tel:+62211234567">(021) 123-4567</a></p>
-        </address>
-        <form action="#" method="post" aria-label="Form kontak">
-          <label for="name">Nama</label>
-          <input id="name" name="name" required /><br />
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required /> <br />
-          <label for="message">Pesan</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <button type="submit">Kirim Pesan</button>
-        </form>
+      <section id="contact" aria-labelledby="contact-heading" class="section-padding bg-surface">
+        <div class="container">
+          <h2 id="contact-heading" class="section-title">Hubungi Kami</h2>
+          <div class="row g-4">
+            <div class="col-12 col-lg-5">
+              <address class="mb-0 card h-100 shadow-sm border-0">
+                <div class="card-body d-flex flex-column gap-2">
+                  <p class="mb-0 d-flex align-items-start gap-2"><i class="bi bi-geo-alt text-primary"></i> Alamat kantor: Jl. Anggur. 123, Samarinda</p>
+                  <p class="mb-0 d-flex align-items-start gap-2"><i class="bi bi-envelope text-primary"></i> Surel: <a href="mailto:myparkuy@gmail.com">myparkuy@gmail.com</a></p>
+                  <p class="mb-0 d-flex align-items-start gap-2"><i class="bi bi-telephone text-primary"></i> Telepon: <a href="tel:+62211234567">(021) 123-4567</a></p>
+                </div>
+              </address>
+            </div>
+            <div class="col-12 col-lg-7">
+              <form action="#" method="post" aria-label="Form kontak" class="card shadow-sm border-0">
+                <div class="card-body">
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                      <label for="name" class="form-label">Nama</label>
+                      <input id="name" name="name" class="form-control" required />
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="email" class="form-label">Email</label>
+                      <input id="email" name="email" type="email" class="form-control" required />
+                    </div>
+                    <div class="col-12">
+                      <label for="message" class="form-label">Pesan</label>
+                      <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+                    </div>
+                    <div class="col-12 d-grid d-sm-flex justify-content-sm-end">
+                      <button type="submit" class="btn btn-primary"><i class="bi bi-send me-2"></i>Kirim Pesan</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-      <hr />
-      <p>&copy; <time datetime="2025">2025</time> eparkir.id</p>
-      <nav aria-label="Footer Navigation">
-        <ul>
-          <li><a href="#privacy">Kebijakan Privasi</a></li>
-          <li><a href="#terms">Syarat & Ketentuan</a></li>
-        </ul>
-      </nav>
+    <footer class="border-top py-4">
+      <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-2">
+        <p class="mb-0 text-secondary">&copy; <time datetime="2025">2025</time> eparkir.id</p>
+        <nav aria-label="Footer Navigation">
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="#privacy">Kebijakan Privasi</a></li>
+            <li class="nav-item"><a class="nav-link" href="#terms">Syarat & Ketentuan</a></li>
+          </ul>
+        </nav>
+      </div>
     </footer>
 
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Notes for developer (non-executing in browser):
-       - Dokumen ini sengaja tanpa CSS; tambahkan file CSS terpisah nanti untuk styling.
+       - Dokumen ini telah terhubung ke Bootstrap 5 & Icons serta styles.css untuk styling.
        - Untuk aksesibilitas: label, fieldset, legend, aria-label sudah disediakan.
        - Untuk integrasi nyata: ganti action form dengan endpoint API, dan tambahkan validasi di server.
   --></body>
