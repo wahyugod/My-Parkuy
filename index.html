@@ -140,6 +140,7 @@
               src="assets/img/ilustration.png"
               alt="Ilustrasi aplikasi parkir online"
               class="img-fluid"
+              width="400px"
             />
           </div>
         </div>
@@ -164,13 +165,15 @@
           </div>
           <ul class="features-grid list-unstyled">
             <li>
-              <article class="card card-featured h-100">
-                <div class="card-body">
-                  <h3 class="h5">
-                    <i class="bi bi-geo-alt-fill text-primary me-2"></i>Temukan
-                    Tempat Parkir Terdekat
+              <article class="feature-card card h-100">
+                <div class="card-body text-center">
+                  <div class="feature-icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <h3 class="h6 feature-title">
+                    Temukan Tempat Parkir Terdekat
                   </h3>
-                  <p class="mb-0">
+                  <p class="text-secondary mb-0">
                     Daftar lokasi parkir dari berbagai mitra publik dan privat
                     dengan real-time availability.
                   </p>
@@ -178,13 +181,13 @@
               </article>
             </li>
             <li>
-              <article class="card card-featured h-100">
-                <div class="card-body">
-                  <h3 class="h5">
-                    <i class="bi bi-credit-card-2-front text-primary me-2"></i
-                    >Pesan & Bayar Online
-                  </h3>
-                  <p class="mb-0">
+              <article class="feature-card card h-100">
+                <div class="card-body text-center">
+                  <div class="feature-icon">
+                    <i class="bi bi-credit-card-2-front"></i>
+                  </div>
+                  <h3 class="h6 feature-title">Pesan & Bayar Online</h3>
+                  <p class="text-secondary mb-0">
                     Pesan slot terlebih dahulu dan bayar melalui metode yang
                     dipilih: dompet digital, kartu, atau transfer.
                   </p>
@@ -192,13 +195,13 @@
               </article>
             </li>
             <li>
-              <article class="card card-featured h-100">
-                <div class="card-body">
-                  <h3 class="h5">
-                    <i class="bi bi-sign-turn-right-fill text-primary me-2"></i
-                    >Rute dan Navigasi
-                  </h3>
-                  <p class="mb-0">
+              <article class="feature-card card h-100">
+                <div class="card-body text-center">
+                  <div class="feature-icon">
+                    <i class="bi bi-sign-turn-right-fill"></i>
+                  </div>
+                  <h3 class="h6 feature-title">Rute dan Navigasi</h3>
+                  <p class="text-secondary mb-0">
                     Dapatkan petunjuk arah ke slot parkir yang dipesan langsung
                     dari aplikasi peta yang Anda gunakan.
                   </p>
@@ -206,13 +209,11 @@
               </article>
             </li>
             <li>
-              <article class="card card-featured h-100">
-                <div class="card-body">
-                  <h3 class="h5">
-                    <i class="bi bi-receipt text-primary me-2"></i>Riwayat &
-                    Struk Digital
-                  </h3>
-                  <p class="mb-0">
+              <article class="feature-card card h-100">
+                <div class="card-body text-center">
+                  <div class="feature-icon"><i class="bi bi-receipt"></i></div>
+                  <h3 class="h6 feature-title">Riwayat & Struk Digital</h3>
+                  <p class="text-secondary mb-0">
                     Riwayat transaksi, struk digital, dan pengingat masa berlaku
                     parkir.
                   </p>
@@ -610,27 +611,50 @@
       <section
         id="contact"
         aria-labelledby="contact-heading"
-        class="section-padding bg-surface section-diagonal-top"
+        class="section-padding bg-surface section-diagonal-top contact-section"
       >
         <div class="container">
           <h2 id="contact-heading" class="section-title">Hubungi Kami</h2>
           <div class="row g-4">
             <div class="col-12 col-lg-5">
-              <address class="mb-0 card h-100 shadow-sm border-0">
-                <div class="card-body d-flex flex-column gap-2">
-                  <p class="mb-0 d-flex align-items-start gap-2">
-                    <i class="bi bi-geo-alt text-primary"></i> Alamat kantor:
-                    Jl. Anggur. 123, Samarinda
-                  </p>
-                  <p class="mb-0 d-flex align-items-start gap-2">
-                    <i class="bi bi-envelope text-primary"></i> Surel:
-                    <a href="mailto:myparkuy@gmail.com">myparkuy@gmail.com</a>
-                  </p>
-                  <p class="mb-0 d-flex align-items-start gap-2">
-                    <i class="bi bi-telephone text-primary"></i> Telepon:
-                    <a href="tel:+62211234567">(021) 123-4567</a>
-                  </p>
-                </div>
+              <address class="mb-0">
+                <ul class="contact-info-list list-unstyled">
+                  <li>
+                    <div class="info-card">
+                      <div class="info-icon"><i class="bi bi-geo-alt"></i></div>
+                      <div>
+                        <div class="fw-semibold">Alamat kantor</div>
+                        <div>Jl. Anggur. 123, Samarinda</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info-card">
+                      <div class="info-icon">
+                        <i class="bi bi-envelope"></i>
+                      </div>
+                      <div>
+                        <div class="fw-semibold">Surel</div>
+                        <div>
+                          <a href="mailto:myparkuy@gmail.com"
+                            >myparkuy@gmail.com</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info-card">
+                      <div class="info-icon">
+                        <i class="bi bi-telephone"></i>
+                      </div>
+                      <div>
+                        <div class="fw-semibold">Telepon</div>
+                        <div><a href="tel:+62211234567">(021) 123-4567</a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </address>
             </div>
             <div class="col-12 col-lg-7">
@@ -724,10 +748,6 @@
     </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Notes for developer (non-executing in browser):
-       - Dokumen ini telah terhubung ke Bootstrap 5 & Icons serta styles.css untuk styling.
-       - Ditambahkan Google Fonts (Inter), pricing cards, testimoni grid dengan avatar, FAQ accordion CSS-only, ikon sosial, dan ilustrasi.
-  --></body>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+  </body>
 </html>
