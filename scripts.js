@@ -37,6 +37,24 @@ document.addEventListener("DOMContentLoaded", function () {
     aosElements.forEach((el) => el.classList.add("aos-show"));
   }
 
+  // Preloader fade out on window load
+  window.addEventListener("load", function () {
+    let preloader = document.getElementById("preloader");
+    let mainContent = document.querySelector("main");
+    let navbar = document.querySelector("nav");
+
+    if (preloader) {
+      if (mainContent) mainContent.style.display = "block";
+      if (navbar) navbar.style.display = "flex";
+
+      preloader.style.opacity = "0";
+
+      setTimeout(function () {
+        preloader.style.display = "none";
+      }, 800);
+    }
+  });
+
   // Dark mode toggle with persistence
   const THEME_KEY = "theme-preference";
   const root = document.body;
@@ -81,23 +99,5 @@ document.addEventListener("DOMContentLoaded", function () {
         // ignore storage errors
       }
     });
-  }
-});
-
-// Preloader fade out on window load
-window.addEventListener("load", function () {
-  let preloader = document.getElementById("preloader");
-  let mainContent = document.querySelector("main");
-  let navbar = document.querySelector("nav");
-
-  if (preloader) {
-    if (mainContent) mainContent.style.display = "block";
-    if (navbar) navbar.style.display = "flex";
-
-    preloader.style.opacity = "0";
-
-    setTimeout(function () {
-      preloader.style.display = "none";
-    }, 800);
   }
 });
